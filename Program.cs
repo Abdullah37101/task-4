@@ -1,2 +1,6 @@
-﻿// See https://aka.ms/new-console-template for more information
-Console.WriteLine("Hello, World!");
+﻿using SystemMetricsProvider metricsProvider = new();
+FileMetricsLogger logger = new();
+
+SystemMetricsMonitor systemMetricsMonitor = new(metricsProvider, logger);
+
+await systemMetricsMonitor.MonitorAsync();
